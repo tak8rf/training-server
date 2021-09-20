@@ -1,0 +1,86 @@
+service:
+  name: chillnn-training-server
+# frameworkVersion: '2'
+
+provider:
+  name: aws
+  stage: ${opt:stage, git:branch}
+  region: ${self:custom.env.node.${self:provider.stage}.REGION}
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  iam:
+    role:
+      name: ${self:provider.stage}-chillnn-training-server
+      statements:
+        - 
+          Effect: Allow
+          Action: 
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+          Resource:
+            - '*'
+  profile: lng
+  logRetentionInDays: 3 # ログは3日まで残す
+
+plugins:
+  - serverless-plugin-git-variables
+  - serverless-appsync-plugin
+  - serverless-plugin-split-stacks
+  - serverless-pseudo-parameters
+  - serverless-webpack
+  - serverless-prune-plugin
+
+package:
+  individually: true
+
+functions:
+  - ${file(./resources/lambda/cognito.yml)}
+  - ${file(./resources/lambda/command.yml)}
+  - ${file(./resources/lambda/controller.yml)}
+
+custom:
+  env:
+    node:
+      dev: ${file(./env/node/dev.yml)}
+      stg: ${file(./env/node/stg.yml)}
+      prd: ${file(./env/node/prd.yml)}
+    infra:
+      dev: ${file(./env/infra/dev.yml)}
+      stg: ${file(./env/infra/stg.yml)}
+      prd: ${file(./env/infra/prd.yml)}
+  prune:
+    automatic: true
+    number: 3
+  webpack:
+    webpackConfig: 'webpack.config.js' # Name of webpack configuration file
+    includeModules: # Node modules configuration for packaging
+      packagePath: './package.json'
+    excludeFiles: src/**/*.(test|spec).ts
+    packager: 'yarn' # Packager that will be used to package your external modules
+  appSync:
+    - ${file(./resources/appsync/admin/appsync.yml)}
+    - ${file(./resources/appsync/user/appsync.yml)}
+
+resources:
+  # cognito
+  - ${file(./resources/cognito/admin.yml)}
+  - ${file(./resources/cognito/user.yml)}
+
+  # dynamodb
+  - ${file(./resources/dynamodb/deloitteTable.yml)}
+  - ${file(./resources/dynamodb/master.yml)}
+
+  # role
+  ## appsync
+  - ${file(./resources/role/appsync/admin.yml)}
+  - ${file(./resources/role/appsync/user.yml)}
+  ## cognito
+  - ${file(./resources/role/cognito/admin.yml)}
+  - ${file(./resources/role/cognito/user.yml)}
+  ## lambda
+  - ${file(./resources/role/lambda/cognito.yml)}
+  - ${file(./resources/role/lambda/controller.yml)}
+  
+  # s3
+  - ${file(./resources/s3/staticAssets.yml)}
