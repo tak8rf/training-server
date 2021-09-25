@@ -19,8 +19,8 @@ Resources:
                 - email
             EmailVerificationMessage: verify_code={####}.
             EmailVerificationSubject: 'Welcome to CHILLNN TRAINING'
-            # LambdaConfig:
-            #     CustomMessage: 'arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:provider.stage}-academy-user-cognito-handler'
+            LambdaConfig:
+                CustomMessage: 'arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:custom.env.infra.${self:provider.stage}.LAMBDA_USER_COGNITO_NAME}'
             MfaConfiguration: 'OFF'
             Policies:
                 PasswordPolicy:

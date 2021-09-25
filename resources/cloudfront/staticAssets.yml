@@ -108,7 +108,7 @@ Resources:
                 # Logging:
                 Origins:
                     - DomainName: { Fn::GetAtt: [StaticAssetsS3Bucket, DomainName] }
-                      Id:${self:custom.env.infra.${self:provider.stage}.CLOUD_FRONT_S3_STATIC_ASSETS_ORIGIN_ID}
+                      Id: ${self:custom.env.infra.${self:provider.stage}.CLOUD_FRONT_S3_STATIC_ASSETS_ORIGIN_ID}
                       S3OriginConfig:
                           OriginAccessIdentity: { Fn::Join: ['/', [origin-access-identity/cloudfront, { Ref: StaticAssetsCloudFrontOriginAccessIdentity }]] }
                 PriceClass: PriceClass_200

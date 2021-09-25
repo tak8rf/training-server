@@ -43,11 +43,8 @@ Resources:
                                 - 'dynamodb:UpdateItem'
                             Resource:
                                 # app master
-                                - { Fn::GetAtt: AcademyMasterTable.Arn }
-                                - Fn::Join: ['', [{ Fn::GetAtt: AcademyMasterTable.Arn }, '/*']]
-                                # deloitte
-                                - { Fn::GetAtt: AcademyDeloitteTable.Arn }
-                                - Fn::Join: ['', [{ Fn::GetAtt: AcademyDeloitteTable.Arn }, '/*']]
+                                - { Fn::GetAtt: ChillnnTrainingMasterTable.Arn }
+                                - Fn::Join: ['', [{ Fn::GetAtt: ChillnnTrainingMasterTable.Arn }, '/*']]
                 - ## Cognitoの設定
                   PolicyName: ${self:custom.env.infra.${self:provider.stage}.LAMBDA_USER_COGNITO_POLICY_NAME_CONITO}
                   PolicyDocument:
@@ -58,8 +55,8 @@ Resources:
                                 - 'cognito-idp:AdminDeleteUser' # 削除可能
                             Resource:
                                 # app master
-                                - { Fn::GetAtt: UserPool.Arn }
-                                - Fn::Join: ['', [{ Fn::GetAtt: UserPool.Arn }, '/*']]
+                                - { Fn::GetAtt: ChillnnTrainingUserPool.Arn }
+                                - Fn::Join: ['', [{ Fn::GetAtt: ChillnnTrainingUserPool.Arn }, '/*']]
                 - ## ログの設定
                   PolicyName: ${self:custom.env.infra.${self:provider.stage}.LAMBDA_USER_COGNITO_POLICY_NAME_LOG}
                   PolicyDocument:
@@ -76,6 +73,6 @@ Resources:
         Type: AWS::Lambda::Permission
         Properties:
             Action: lambda:InvokeFunction
-            FunctionName: ${self:provider.stage}-academy-user-cognito-handler
+            FunctionName: ${self:custom.env.infra.${self:provider.stage}.LAMBDA_USER_COGNITO_NAME}
             Principal: cognito-idp.amazonaws.com
-            SourceArn: { Fn::GetAtt: UserPool.Arn }
+            SourceArn: { Fn::GetAtt: ChillnnTrainingUserPool.Arn }

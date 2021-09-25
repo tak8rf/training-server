@@ -35,6 +35,7 @@ DYNAMODB_MASTER_TABLE_UUID_INDEX_NAME: uuidIndex
 #######################################
 # Lambda
 #######################################
+LAMBDA_USER_COGNITO_NAME: chillnn-training-user-cognito-${self:provider.stage}
 LAMBDA_USER_CONTROLLER_NAME: chillnn-training-user-controller-${self:provider.stage}
 #######################################
 # Roles
