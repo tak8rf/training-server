@@ -30,7 +30,12 @@ COGNITO_USER_IDENTITY_POOL_NAME: '${self:provider.stage} chillnn training user'
 #######################################
 # DynamoDB
 #######################################
-DYNAMODB_TABLE_NAME: chillnn-training-master-table-${self:provider.stage}
+DYNAMODB_MASTER_TABLE_NAME: chillnn-training-master-table-${self:provider.stage}
+DYNAMODB_MASTER_TABLE_UUID_INDEX_NAME: uuidIndex
+#######################################
+# Lambda
+#######################################
+LAMBDA_USER_CONTROLLER_NAME: chillnn-training-user-controller-${self:provider.stage}
 #######################################
 # Roles
 #######################################

@@ -1,0 +1,29 @@
+schema {
+    mutation: Mutation
+    query: Query
+}
+
+type Mutation {
+    ########################################
+    # post
+    ########################################
+    addPost(input: PostMastInput!): PostMast!
+    deletePost(postID: ID!): PostMast!
+    ########################################
+    # user
+    ########################################
+    updateUserMast(input: UserMast!): UserMast!
+}
+
+type Query {
+    ########################################
+    # post
+    ########################################
+    fetchPostsByOwnerUserID(userID: ID!): [PostMast!]!
+    fetchPostByPostID(postID: ID!): PostMast
+    ########################################
+    # user
+    ########################################
+    fetchMyUserMast: UserMast
+    fetchUserMastByUserID(userID: ID!): UserMast
+}

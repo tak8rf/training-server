@@ -13,7 +13,7 @@ Resources:
             BillingMode: PAY_PER_REQUEST
             # ContributorInsightsSpecification:
             GlobalSecondaryIndexes:
-                - IndexName: uuidIndex # uuid index
+                - IndexName: ${self:custom.env.infra.${self:provider.stage}.DYNAMODB_MASTER_TABLE_UUID_INDEX_NAME}
                   KeySchema:
                       - AttributeName: uuid
                         KeyType: HASH
@@ -30,7 +30,7 @@ Resources:
             # ProvisionedThroughput:
             # SSESpecification:
             # StreamSpecification:
-            TableName: ${self:custom.env.infra.${self:provider.stage}.DYNAMODB_TABLE_NAME}
+            TableName: ${self:custom.env.infra.${self:provider.stage}.DYNAMODB_MASTER_TABLE_NAME}
             Tags:
                 - Key: Name
                   Value: ${self:provider.stage} Master
