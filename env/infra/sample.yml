@@ -7,6 +7,8 @@
 # settings
 #######################################
 AWS_CLI_PROFILE: '' # ← !!! 自分の開発環境のAWS CLIのProfile名を入力しよう
+AWS_SERVICE_ROLE_NAME: chillnn-training-role-${self:provider.stage}
+AWS_REGION: ap-northeast-1
 #######################################
 # appsync
 #######################################
