@@ -11,6 +11,7 @@ jspm_packages
 # 本番環境のyml
 prd.yml
 stg.yml
+dev.yml
 
 # tsc
 lib

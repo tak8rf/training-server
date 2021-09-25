@@ -1,6 +1,5 @@
 service:
   name: chillnn-training-server
-# frameworkVersion: '2'
 
 provider:
   name: aws

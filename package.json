@@ -6,9 +6,9 @@
   "author": "com.chillnn",
   "license": "MIT",
   "dependencies": {
-    "chillnn-training-abr": "git+ssh://git@github.com:ryoNagata001/chillnn-training-abr.git#dev",
     "aws-lambda": "^1.0.6",
-    "aws-sdk": "^2.978.0"
+    "aws-sdk": "^2.978.0",
+    "chillnn-training-abr": "git+ssh://git@github.com:ryoNagata001/chillnn-training-abr.git#dev"
   },
   "devDependencies": {
     "@graphql-codegen/add": "^3.1.0",
@@ -31,5 +31,6 @@
     "abr": "sh node_modules/chillnn-training-abr/pull.sh",
     "codegen": "graphql-codegen --config codegen.yml",
     "deploy": "sh cleanSchema.sh"
-  }
+  },
+  "repository": "git@github.com:ryoNagata001/chillnn-training-server.git"
 }
