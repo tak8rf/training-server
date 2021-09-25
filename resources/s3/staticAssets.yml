@@ -2,7 +2,7 @@ Resources:
     StaticAssetsS3Bucket:
         Type: AWS::S3::Bucket
         ## 残す
-        DeletionPolicy: Retain
+        # DeletionPolicy: Retain # <= 本番ではこれ設定しないと死にます
         Properties:
             BucketName: ${self:custom.env.infra.${self:provider.stage}.S3_STATIC_ASSETS_BUCKET_NAME}
             AccessControl: Private

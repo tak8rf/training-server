@@ -1,7 +1,7 @@
 Resources:
     ChillnnTrainingMasterTable:
         Type: 'AWS::DynamoDB::Table'
-        DeletionPolicy: Retain
+        # DeletionPolicy: Retain # <= 本番ではこれ設定しないと死にます
         Properties:
             AttributeDefinitions:
                 - AttributeName: PK

@@ -34,8 +34,7 @@ package:
 
 functions:
     - ${file(./resources/lambda/cognito.yml)}
-    - ${file(./resources/lambda/command.yml)}
-    - ${file(./resources/lambda/controller.yml)}
+    - ${file(./resources/lambda/controller/user.yml)}
 
 custom:
     env:

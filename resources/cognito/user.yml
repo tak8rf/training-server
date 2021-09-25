@@ -7,7 +7,7 @@ Resources:
     # User pool
     ChillnnTrainingUserPool:
         Type: 'AWS::Cognito::UserPool'
-        DeletionPolicy: Retain
+        # DeletionPolicy: Retain # <= 本番ではこれ設定しないと死にます
         Properties:
             UserPoolName: ${self:custom.env.infra.${self:provider.stage}.COGNITO_USER_USER_POOL_NAME}
             AdminCreateUserConfig:
