@@ -5,7 +5,7 @@
   config:
       tableName: { Ref: ChillnnTrainingMasterTable }
       serviceRoleArn: { Fn::GetAtt: [UserAppSyncDynamoRole, Arn] }
-      region: ${self:provider.region}
+      region: ${self:custom.env.infra.${self:provider.stage}.REGION}
 # Academyのマスターテーブル
 - type: AWS_LAMBDA
   name: controller
@@ -13,4 +13,4 @@
   config:
       functionName: ${self:custom.env.infra.${self:provider.stage}.LAMBDA_USER_CONTROLLER_NAME}
       serviceRoleArn: { Fn::GetAtt: [UserAppSyncLambdaRole, Arn] }
-      region: ${self:provider.region}
+      region: ${self:custom.env.infra.${self:provider.stage}.REGION}

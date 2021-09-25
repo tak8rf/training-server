@@ -2,7 +2,7 @@ name: ${self:custom.env.infra.${self:provider.stage}.APPSYNC_NAME}
 authenticationType: AMAZON_COGNITO_USER_POOLS
 # if AMAZON_COGNITO_USER_POOLS
 userPoolConfig:
-    awsRegion: ${self:provider.region} # defaults to provider region
+    awsRegion: ${self:custom.env.infra.${self:provider.stage}.REGION} # defaults to provider region
     defaultAction: ALLOW # required # ALLOW or DENY
     userPoolId: { Ref: ChillnnTrainingUserPool } # required # user pool ID
 additionalAuthenticationProviders:

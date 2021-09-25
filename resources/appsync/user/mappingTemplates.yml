@@ -11,38 +11,38 @@
 - dataSource: controller
   type: Mutation
   field: addPost
-  request: master/postMast/addPost/req.vtl
-  response: master/postMast/addPost/res.vtl
+  request: postMast/addPost/req.vtl
+  response: postMast/addPost/res.vtl
 - dataSource: controller
   type: Mutation
   field: deletePost
-  request: master/postMast/deletePost/req.vtl
-  response: master/postMast/deletePost/res.vtl
+  request: postMast/deletePost/req.vtl
+  response: postMast/deletePost/res.vtl
 - dataSource: masterTable
   type: Query
   field: fetchPostsByOwnerUserID
-  request: master/postMast/fetchPostsByOwnerUserID/req.vtl
-  response: master/postMast/fetchPostsByOwnerUserID/res.vtl
+  request: postMast/fetchPostsByOwnerUserID/req.vtl
+  response: postMast/fetchPostsByOwnerUserID/res.vtl
 - dataSource: masterTable
   type: Query
   field: fetchPostByPostID
-  request: master/postMast/fetchPostByPostID/req.vtl
-  response: master/postMast/fetchPostByPostID/res.vtl
+  request: postMast/fetchPostByPostID/req.vtl
+  response: postMast/fetchPostByPostID/res.vtl
 ##################################################
 # user
 ##################################################
 - dataSource: controller
   type: Mutation
   field: updateUserMast
-  request: master/userMast/updateUserMast/req.vtl
-  response: master/userMast/updateUserMast/res.vtl
+  request: userMast/updateUserMast/req.vtl
+  response: userMast/updateUserMast/res.vtl
 - dataSource: masterTable
   type: Query
   field: fetchMyUserMast
-  request: master/userMast/fetchMyUserMast/req.vtl
-  response: master/userMast/fetchMyUserMast/res.vtl
+  request: userMast/fetchMyUserMast/req.vtl
+  response: userMast/fetchMyUserMast/res.vtl
 - dataSource: masterTable
   type: Query
   field: fetchUserMastByUserID
-  request: master/userMast/fetchUserMastByUserID/req.vtl
-  response: master/userMast/fetchUserMastByUserID/res.vtl
+  request: userMast/fetchUserMastByUserID/req.vtl
+  response: userMast/fetchUserMastByUserID/res.vtl

@@ -38,7 +38,7 @@ functions:
 
 custom:
     env:
-        node:
+        app:
             dev: ${file(./env/app/dev.yml)}
             stg: ${file(./env/app/stg.yml)}
             prd: ${file(./env/app/prd.yml)}
@@ -55,8 +55,8 @@ custom:
             packagePath: './package.json'
         excludeFiles: src/**/*.(test|spec).ts
         packager: 'yarn' # Packager that will be used to package your external modules
-    appSync:
-        - ${file(./resources/appsync/user/appsync.yml)}
+    # appSync:
+    #     - ${file(./resources/appsync/user/appsync.yml)}
 
 resources:
     # cloudfront

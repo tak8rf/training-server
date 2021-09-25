@@ -69,10 +69,10 @@ Resources:
                                 - '*'
                             Effect: Allow
     # Cognitoの実行権限
-    CognitoCustomMessageLambdaPermission:
-        Type: AWS::Lambda::Permission
-        Properties:
-            Action: lambda:InvokeFunction
-            FunctionName: ${self:custom.env.infra.${self:provider.stage}.LAMBDA_USER_COGNITO_NAME}
-            Principal: cognito-idp.amazonaws.com
-            SourceArn: { Fn::GetAtt: ChillnnTrainingUserPool.Arn }
+    # CognitoCustomMessageLambdaPermission:
+    #     Type: AWS::Lambda::Permission
+    #     Properties:
+    #         Action: lambda:InvokeFunction
+    #         FunctionName: ${self:custom.env.infra.${self:provider.stage}.LAMBDA_USER_COGNITO_NAME}
+    #         Principal: cognito-idp.amazonaws.com
+    #         SourceArn: { Fn::GetAtt: ChillnnTrainingUserPool.Arn }
