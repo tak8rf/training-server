@@ -1,6 +1,6 @@
 overwrite: true
 schema:
-    - './node_modules/academy-abr/dist/schema.graphql'
+    - './node_modules/chillnn-training-abr/dist/schema.graphql'
 documents: null
 config:
     namingConvention: keep
@@ -15,11 +15,6 @@ config:
         AWSPhone: string
         AWSIPAddress: string
 generates:
-    resources/appsync/admin/schema.graphql:
-        schema:
-            - './src/appsync/admin/schema.graphql'
-        plugins:
-            - 'schema-ast'
     resources/appsync/user/schema.graphql:
         schema:
             - './src/appsync/user/schema.graphql'

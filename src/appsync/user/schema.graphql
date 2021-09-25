@@ -12,7 +12,7 @@ type Mutation {
     ########################################
     # user
     ########################################
-    updateUserMast(input: UserMast!): UserMast!
+    updateUserMast(input: UserMastInput!): UserMast!
 }
 
 type Query {
