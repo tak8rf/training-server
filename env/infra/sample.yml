@@ -61,4 +61,4 @@ LAMBDA_USER_CONTROLLER_POLICY_NAME_LOG: chillnn-training-lambda-controller-polic
 #######################################
 # s3
 #######################################
-S3_STATIC_ASSETS_BUCKET_NAME: chillnn-training-static-asset-${self:provider.stage} # ← !!! 自分で被らないように名前をつける必要がある
+S3_STATIC_ASSETS_BUCKET_NAME: chillnn-training-static-asset-${self:provider.stage} # ← !!! バケット名は世界でユニークである必要がある。自分で名前をつけてみましょう
