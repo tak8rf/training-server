@@ -5,7 +5,7 @@
 module.exports = (resource, logicalId) => {
     console.log(`[split-stacks]\nlogicalId => ${logicalId}\nresource => ${JSON.stringify(resource)}`);
     // =============== AppSync ===============
-    if (/userappsync(.*)GraphQl/.test(logicalId)) {
+    if (/training(.*)user(.*)GraphQl/.test(logicalId)) {
         return {
             destination: 'AppSyncUser',
             allowSuffix: true,

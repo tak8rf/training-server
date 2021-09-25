@@ -11,6 +11,6 @@
   name: controller
   description: 'コントローラー'
   config:
-      functionName: ${self:custom.env.infra.${self:provider.stage}.LAMBDA_USER_CONTROLLER_NAME}
+      functionName: userController
       serviceRoleArn: { Fn::GetAtt: [UserAppSyncLambdaRole, Arn] }
       region: ${self:custom.env.infra.${self:provider.stage}.REGION}

@@ -4,7 +4,7 @@ service:
 provider:
     name: aws
     stage: ${opt:stage, git:branch}
-    region: ${self:custom.env.infra.${self:provider.stage}.REGION}
+    region: us-east-1
     runtime: nodejs12.x
     lambdaHashingVersion: 20201221
     iam:

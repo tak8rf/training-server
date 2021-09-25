@@ -1,3 +1,4 @@
+# 永田の環境で作った例です
 #######################################
 #
 # インフラで利用する環境変数のtemplate
@@ -6,7 +7,7 @@
 #######################################
 # settings
 #######################################
-AWS_CLI_PROFILE: '' # ← !!! 自分の開発環境のAWS CLIのProfile名を入力しよう
+AWS_CLI_PROFILE: 'stingy' # ← !!! 自分の開発環境のAWS CLIのProfile名を入力しよう
 AWS_SERVICE_ROLE_NAME: chillnn-training-role-${self:provider.stage}
 #######################################
 # AppSync
@@ -17,8 +18,8 @@ APPSYNC_NAME: chillnn-training-user-${self:provider.stage}
 #######################################
 CLOUD_FRONT_STATIC_CACHE_POLICY_NAME: chillnn-training-cloudfront-static-cache-policy-${self:provider.stage}
 CLOUD_FRONT_ACTIVE_CACHE_POLICY_NAME: chillnn-training-cloudfront-active-cache-policy-${self:provider.stage}
-CLOUD_FRONT_ALIAS_NAME: 'example.com' # ← !!! 自分でドメインを取る必要がある
-CLOUD_FRONT_ALIAS_ACM_ARN: '' # ← !!! 自分でACMから証明書を発行する必要がある
+CLOUD_FRONT_ALIAS_NAME: '${self:provider.stage}-assets.chillnn-training.stingy.ch' # ← !!! 自分でドメインを取る必要がある
+CLOUD_FRONT_ALIAS_ACM_ARN: 'arn:aws:acm:us-east-1:334547292678:certificate/04e44d94-0eb7-4d7f-ad58-fc5c9fbd1ef7' # ← !!! 自分でACMから証明書を発行する必要がある
 CLOUD_FRONT_S3_STATIC_ASSETS_ORIGIN_ID: S3_STATIC_ASSETS_ORIGIN_ID
 #######################################
 # Cognito
@@ -66,4 +67,4 @@ LAMBDA_USER_CONTROLLER_POLICY_NAME_LOG: chillnn-training-lambda-controller-polic
 #######################################
 # s3
 #######################################
-S3_STATIC_ASSETS_BUCKET_NAME: '' # ← !!! バケット名は世界でユニークである必要があります。自分で名前をつけてみましょう
+S3_STATIC_ASSETS_BUCKET_NAME: chillnn-training-static-asset-${self:provider.stage} # ← !!! バケット名は世界でユニークである必要がある。自分で名前をつけてみましょう
