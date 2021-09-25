@@ -41,9 +41,9 @@ functions:
 custom:
   env:
     node:
-      dev: ${file(./env/node/dev.yml)}
-      stg: ${file(./env/node/stg.yml)}
-      prd: ${file(./env/node/prd.yml)}
+      dev: ${file(./env/app/dev.yml)}
+      stg: ${file(./env/app/stg.yml)}
+      prd: ${file(./env/app/prd.yml)}
     infra:
       dev: ${file(./env/infra/dev.yml)}
       stg: ${file(./env/infra/stg.yml)}

@@ -1,0 +1,31 @@
+#######################################
+#
+# インフラで利用する環境変数のtemplate
+#
+#######################################
+#######################################
+# appsync
+#######################################
+APPSYNC_NAME: chillnn-training-${self:provider.stage}
+#######################################
+# cloud front
+#######################################
+CLOUD_FRONT_STATIC_CACHE_POLICY_NAME: chillnn-training-cloudfront-static-cache-policy-${self:provider.stage}
+CLOUD_FRONT_ACTIVE_CACHE_POLICY_NAME: chillnn-training-cloudfront-active-cache-policy-${self:provider.stage}
+CLOUD_FRONT_ALIAS_NAME: 'example.com' # ← !!! 自分でドメインを取る必要がある
+CLOUD_FRONT_ALIAS_ACM_ARN: '' # ← !!! 自分でACMから証明書を発行する必要がある
+CLOUD_FRONT_S3_STATIC_ASSETS_ORIGIN_ID: S3_STATIC_ASSETS_ORIGIN_ID
+#######################################
+# Cognito
+#######################################
+COGNITO_USER_USER_POOL_NAME: chillnn-training-user-cognito-userPool-${self:provider.stage}
+COGNITO_USER_USER_POOL_CLIENT_NAME: chillnn-training-user-cognito-userPoolClient-${self:provider.stage}
+COGNITO_USER_IDENTITY_POOL_NAME: '${self:provider.stage} chillnn training user'
+#######################################
+# DynamoDB
+#######################################
+DYNAMODB_TABLE_NAME: chillnn-training-master-table-${self:provider.stage}
+#######################################
+# s3
+#######################################
+S3_STATIC_ASSETS_BUCKET_NAME: chillnn-training-static-asset-${self:provider.stage} # ← !!! 自分で被らないように名前をつける必要がある

@@ -1,0 +1,8 @@
+# Academyのマスターテーブル
+- type: AMAZON_DYNAMODB
+  name: masterTable
+  description: 'マスターデータのテーブル'
+  config:
+      tableName: { Ref: AcademyMasterTable }
+      serviceRoleArn: { Fn::GetAtt: [UserAppSyncDynamoRole, Arn] }
+      region: ${self:provider.region}

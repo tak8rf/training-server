@@ -1,0 +1,64 @@
+##################################################
+#
+#
+# mapping
+#
+#
+##################################################
+########################
+#
+# UserPurchasedCourseMap
+#
+########################
+- dataSource: masterTable
+  type: Query
+  field: fetchMyUserPurchasedCourseMap
+  request: mapping/userPurchasedCourseMap/fetchMyUserPurchasedCourseMap/req.vtl
+  response: mapping/userPurchasedCourseMap/fetchMyUserPurchasedCourseMap/res.vtl
+##################################################
+#
+#
+# master
+#
+#
+##################################################
+########################
+#
+# CourseMast
+#
+########################
+- dataSource: masterTable
+  type: Query
+  field: fetchCourseMastByUUID
+  request: master/course/fetchCourseMastByUUID/req.vtl
+  response: master/course/fetchCourseMastByUUID/res.vtl
+- dataSource: masterTable
+  type: Query
+  field: fetchAllCourses
+  request: master/course/fetchAllCourses/req.vtl
+  response: master/course/fetchAllCourses/res.vtl
+########################
+#
+# UserMast
+#
+########################
+- dataSource: masterTable
+  type: Query
+  field: fetchMyUserMast
+  request: master/user/fetchMyUserMast/req.vtl
+  response: master/user/fetchMyUserMast/res.vtl
+########################
+#
+# VideoMast
+#
+########################
+- dataSource: masterTable
+  type: Query
+  field: fetchVideoMastByUUID
+  request: master/video/fetchVideoMastByUUID/req.vtl
+  response: master/video/fetchVideoMastByUUID/res.vtl
+- dataSource: masterTable
+  type: Query
+  field: fetchVideoMastsByCourseID
+  request: master/video/fetchVideoMastsByCourseID/req.vtl
+  response: master/video/fetchVideoMastsByCourseID/res.vtl

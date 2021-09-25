@@ -1,0 +1,37 @@
+Resources:
+    ChillnnTrainingMasterTable:
+        Type: 'AWS::DynamoDB::Table'
+        DeletionPolicy: Retain
+        Properties:
+            AttributeDefinitions:
+                - AttributeName: PK
+                  AttributeType: S
+                - AttributeName: SK
+                  AttributeType: S
+                - AttributeName: uuid
+                  AttributeType: S
+            BillingMode: PAY_PER_REQUEST
+            # ContributorInsightsSpecification:
+            GlobalSecondaryIndexes:
+                - IndexName: uuidIndex # uuid index
+                  KeySchema:
+                      - AttributeName: uuid
+                        KeyType: HASH
+                  Projection:
+                      ProjectionType: ALL
+            KeySchema:
+                - AttributeName: PK
+                  KeyType: HASH
+                - AttributeName: SK
+                  KeyType: RANGE
+            # KinesisStreamSpecification:
+            # LocalSecondaryIndexes:
+            # PointInTimeRecoverySpecification:
+            # ProvisionedThroughput:
+            # SSESpecification:
+            # StreamSpecification:
+            TableName: ${self:custom.env.infra.${self:provider.stage}.DYNAMODB_TABLE_NAME}
+            Tags:
+                - Key: Name
+                  Value: ${self:provider.stage} Master
+            # TimeToLiveSpecification:
