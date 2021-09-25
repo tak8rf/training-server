@@ -18,7 +18,7 @@ provider:
                       - logs:PutLogEvents
                   Resource:
                       - '*'
-    profile: lng
+    profile: ${self:custom.env.infra.${self:provider.stage}.AWS_CLI_PROFILE}
     logRetentionInDays: 3 # ログは3日まで残す
 
 plugins:
