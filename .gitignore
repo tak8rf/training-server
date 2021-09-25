@@ -8,7 +8,7 @@ jspm_packages
 # Webpack directories
 .webpack
 
-# 本番環境のyml
+# 環境変数のyml
 prd.yml
 stg.yml
 dev.yml
