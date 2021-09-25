@@ -26,6 +26,33 @@ COGNITO_USER_IDENTITY_POOL_NAME: '${self:provider.stage} chillnn training user'
 #######################################
 DYNAMODB_TABLE_NAME: chillnn-training-master-table-${self:provider.stage}
 #######################################
+# Roles
+#######################################
+# AppSync role
+APPSYNC_USER_DYNAMO_ROLE_NAME: chillnn-training-appsync-user-dynamo-role-${self:provider.stage}
+APPSYNC_USER_DYNAMO_POLICY_NAME: chillnn-training-appsync-user-dynamo-role-${self:provider.stage}
+APPSYNC_USER_LAMBDA_ROLE_NAME: chillnn-training-appsync-user-lambda-role-${self:provider.stage}
+APPSYNC_USER_LAMBDA_POLICY_NAME: chillnn-training-appsync-user-lambda-role-${self:provider.stage}
+APPSYNC_USER_LOG_ROLE_NAME: chillnn-training-appsync-user-log-role-${self:provider.stage}
+APPSYNC_USER_LOG_POLICY_NAME: chillnn-training-appsync-user-log-role-${self:provider.stage}
+# Cognito role
+COGNITO_USER_AUTHORIZED_ROLE_NAME: chillnn-training-cognito-user-authorized-role-${self:provider.stage}
+COGNITO_USER_AUTHORIZED_POLICY_NAME: chillnn-training-cognito-user-authorized-policy-${self:provider.stage}
+COGNITO_USER_UnAUTHORIZED_ROLE_NAME: chillnn-training-cognito-user-unauthorized-role-${self:provider.stage}
+COGNITO_USER_UnAUTHORIZED_POLICY_NAME: chillnn-training-cognito-user-unauthorized-policy-${self:provider.stage}
+# Lambda role
+## user cognito
+LAMBDA_USER_COGNITO_ROLE_NAME: chillnn-training-lambda-cognito-role-${self:provider.stage}
+LAMBDA_USER_COGNITO_POLICY_NAME_S3: chillnn-training-lambda-cognito-policy-${self:provider.stage}-s3
+LAMBDA_USER_COGNITO_POLICY_NAME_DYNAMODB: chillnn-training-lambda-cognito-policy-${self:provider.stage}-dynamo
+LAMBDA_USER_COGNITO_POLICY_NAME_CONITO: chillnn-training-lambda-cognito-policy-${self:provider.stage}-cognito
+LAMBDA_USER_COGNITO_POLICY_NAME_LOG: chillnn-training-lambda-cognito-policy-${self:provider.stage}-log
+## user controller
+LAMBDA_USER_CONTROLLER_ROLE_NAME: chillnn-training-lambda-controller-role-${self:provider.stage}
+LAMBDA_USER_CONTROLLER_POLICY_NAME_S3: chillnn-training-lambda-controller-policy-${self:provider.stage}-s3
+LAMBDA_USER_CONTROLLER_POLICY_NAME_DYNAMODB: chillnn-training-lambda-controller-policy-${self:provider.stage}-dynamo
+LAMBDA_USER_CONTROLLER_POLICY_NAME_LOG: chillnn-training-lambda-controller-policy-${self:provider.stage}-log
+#######################################
 # s3
 #######################################
 S3_STATIC_ASSETS_BUCKET_NAME: chillnn-training-static-asset-${self:provider.stage} # ← !!! 自分で被らないように名前をつける必要がある

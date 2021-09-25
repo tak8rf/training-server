@@ -3,6 +3,6 @@
   name: masterTable
   description: 'マスターデータのテーブル'
   config:
-      tableName: { Ref: AcademyMasterTable }
+      tableName: { Ref: ChillnnTrainingMasterTable }
       serviceRoleArn: { Fn::GetAtt: [UserAppSyncDynamoRole, Arn] }
       region: ${self:provider.region}
