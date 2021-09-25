@@ -4,7 +4,7 @@ service:
 provider:
     name: aws
     stage: ${opt:stage, git:branch}
-    region: us-east-1
+    region: ap-northeast-1
     runtime: nodejs12.x
     lambdaHashingVersion: 20201221
     iam:
