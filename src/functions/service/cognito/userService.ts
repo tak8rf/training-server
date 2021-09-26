@@ -24,6 +24,7 @@ export class UserCognitoService {
                 updatedAt: now,
             });
         } catch (err) {
+            console.error(err);
             await cognito
                 .adminDeleteUser({
                     UserPoolId: input.userPoolId,
@@ -34,8 +35,8 @@ export class UserCognitoService {
         }
 
         const codeParameter: string = input.request.codeParameter || '{####}';
-        input.response.emailSubject = `【新規登録】ようこそCHILLNNへ`;
-        input.response.emailMessage = `verify code ${codeParameter}`;
+        input.response.emailSubject = `【新規登録】ようこそCHILLSTAGRAMへ`;
+        input.response.emailMessage = `認証コード = ${codeParameter}`;
         return input;
     }
 }
