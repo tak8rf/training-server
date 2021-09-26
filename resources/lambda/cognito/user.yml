@@ -1,7 +1,7 @@
 # cognito
 userCognitoHandler:
     handler: src/functions/controller/cognito/user.handler
-    name: ${self:custom.env.app.${self:provider.stage}.LAMBDA_USER_COGNITO_NAME}
+    name: ${self:custom.env.infra.${self:provider.stage}.LAMBDA_USER_COGNITO_NAME}
     environment: ${self:custom.env.app.${self:provider.stage}}
     description: ユーザーのCognitoハンドラ
     memorySize: 1024
