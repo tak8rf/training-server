@@ -1,3 +1,8 @@
+#######################################################
+#
+# Cognitoのユーザーロール
+#
+#######################################################
 Resources:
     # IAM role used for authenticated users
     UserCognitoAuthRole:
