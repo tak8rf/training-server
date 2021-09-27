@@ -26,4 +26,5 @@ type Query {
     ########################################
     fetchMyUserMast: UserMast
     fetchUserMastByUserID(userID: ID!): UserMast
+    fetchAllUserMast: [UserMast!]!
 }

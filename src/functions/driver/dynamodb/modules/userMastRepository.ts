@@ -58,6 +58,19 @@ export class DynamoDBUserMastRepository extends DynamoDBRepositoryBase<UserMast>
         }
     }
 
+    public fetchAllUser(): Promise<UserMast[]> {
+        return this.query({
+            TableName: this.tableName,
+            KeyConditionExpression: '#PK = :PK',
+            ExpressionAttributeNames: {
+                '#PK': 'PK',
+            },
+            ExpressionAttributeValues: {
+                ':PK': 'User',
+            },
+        });
+    }
+
     // ================================================
     // keys
     // ================================================

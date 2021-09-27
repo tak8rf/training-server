@@ -46,3 +46,8 @@
   field: fetchUserMastByUserID
   request: userMast/fetchUserMastByUserID/req.vtl
   response: userMast/fetchUserMastByUserID/res.vtl
+- dataSource: masterTable
+  type: Query
+  field: fetchAllUserMast
+  request: userMast/fetchAllUserMast/req.vtl
+  response: userMast/fetchAllUserMast/res.vtl
