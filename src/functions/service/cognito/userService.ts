@@ -18,7 +18,7 @@ export class UserCognitoService {
             await this.repositoryContainer.userMastRepository.addUserMast({
                 userID,
                 email,
-                name: '名無しさん',
+                name: '名無し',
                 userIcon: null,
                 createdAt: now,
                 updatedAt: now,
