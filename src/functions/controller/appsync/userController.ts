@@ -33,7 +33,7 @@ export const handler: Handler = async (
             // User
             // ==================================================
             case 'UpdateUserMast':
-                response = await repositoryContainer.userMastRepository.addUserMast(event.input);
+                response = await repositoryContainer.userMastRepository.updateUserMast(event.input);
                 break;
         }
     } catch (err) {
