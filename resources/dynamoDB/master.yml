@@ -10,7 +10,10 @@ Resources:
                   AttributeType: S
                 - AttributeName: uuid
                   AttributeType: S
-            BillingMode: PAY_PER_REQUEST
+            BillingMode: PROVISIONED
+            ProvisionedThroughput:
+                ReadCapacityUnits: 1
+                WriteCapacityUnits: 1
             # ContributorInsightsSpecification:
             GlobalSecondaryIndexes:
                 - IndexName: ${self:custom.env.infra.${self:provider.stage}.DYNAMODB_MASTER_TABLE_UUID_INDEX_NAME}
