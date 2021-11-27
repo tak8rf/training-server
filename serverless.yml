@@ -1,5 +1,4 @@
-service:
-    name: chillnn-training-server
+service: chillnn-training-server
 
 provider:
     name: aws
