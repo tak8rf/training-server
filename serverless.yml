@@ -57,6 +57,7 @@ custom:
         packager: 'yarn' # Packager that will be used to package your external modules
     appSync:
         - ${file(./resources/appsync/user/appsync.yml)}
+    exportGitVariables: false # gitの変数をlambdaの環境変数に反映しない
 
 resources:
     # cloudfront
