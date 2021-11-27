@@ -73,7 +73,7 @@ resources:
     - ${file(./resources/cognito/user.yml)}
 
     # dynamodb
-    - ${file(./resources/dynamoDB/master.yml)}
+    - ${file(./resources/dynamodb/master.yml)}
 
     # role
     ## appsync
