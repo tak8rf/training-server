@@ -1,8 +1,9 @@
 service: chillnn-training-server
+variablesResolutionMode: 20210326
 
 provider:
     name: aws
-    stage: ${opt:stage, git:branch}
+    stage: dev
     region: ap-northeast-1
     runtime: nodejs14.x
     lambdaHashingVersion: 20201221
@@ -24,7 +25,6 @@ plugins:
     - serverless-plugin-git-variables
     - serverless-appsync-plugin
     - serverless-plugin-split-stacks
-    - serverless-pseudo-parameters
     - serverless-webpack
     - serverless-prune-plugin
 
@@ -39,12 +39,12 @@ custom:
     env:
         app:
             dev: ${file(./env/app/dev.yml)}
-            stg: ${file(./env/app/stg.yml)}
-            prd: ${file(./env/app/prd.yml)}
+            # stg: ${file(./env/app/stg.yml)}
+            # prd: ${file(./env/app/prd.yml)}
         infra:
             dev: ${file(./env/infra/dev.yml)}
-            stg: ${file(./env/infra/stg.yml)}
-            prd: ${file(./env/infra/prd.yml)}
+            # stg: ${file(./env/infra/stg.yml)}
+            # prd: ${file(./env/infra/prd.yml)}
     prune:
         automatic: true
         number: 3
