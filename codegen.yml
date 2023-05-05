@@ -1,6 +1,6 @@
 overwrite: true
 schema:
-    - './node_modules/chillnn-training-abr/dist/schema.graphql'
+    - './node_modules/training-abr/dist/schema.graphql'
 documents: null
 config:
     namingConvention: keep

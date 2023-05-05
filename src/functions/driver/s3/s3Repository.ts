@@ -1,5 +1,5 @@
-import { IS3Repository } from 'chillnn-training-abr';
-import { S3Object } from 'chillnn-training-abr/dist/entities/type';
+import { IS3Repository } from 'training-abr';
+import { S3Object } from 'training-abr/dist/entities/type';
 
 export class S3Repository implements IS3Repository {
     fetchObject<T>(s3Object: S3Object): Promise<T> {

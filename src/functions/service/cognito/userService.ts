@@ -1,6 +1,6 @@
 import { CustomMessageSignUpTriggerEvent } from 'aws-lambda';
 import AWS from 'aws-sdk';
-import { RepositoryContainer } from 'chillnn-training-abr';
+import { RepositoryContainer } from 'training-abr';
 
 const cognito = new AWS.CognitoIdentityServiceProvider({});
 

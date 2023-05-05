@@ -1,4 +1,4 @@
-import { RepositoryContainer } from 'chillnn-training-abr';
+import { RepositoryContainer } from 'training-abr';
 import { postMastRepository } from './modules/postMastRepository';
 import { s3Repository } from './modules/s3Repository';
 import { userMastRepository } from './modules/userMastRepository';

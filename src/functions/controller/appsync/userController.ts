@@ -1,6 +1,6 @@
 import { repositoryContainer } from '@/repository';
 import { Handler } from 'aws-lambda';
-import { Scalars } from 'chillnn-training-abr/dist/entities/type';
+import { Scalars } from 'training-abr/dist/entities/type';
 
 type UserAction =
     // post

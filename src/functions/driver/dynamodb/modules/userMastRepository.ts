@@ -1,5 +1,5 @@
-import { IUserMastRepository } from 'chillnn-training-abr';
-import { UserMast } from 'chillnn-training-abr/dist/entities/type';
+import { IUserMastRepository } from 'training-abr';
+import { UserMast } from 'training-abr/dist/entities/type';
 import { DynamoDBRepositoryBase } from '../dynamoDBRepositoryBase';
 
 export class DynamoDBUserMastRepository extends DynamoDBRepositoryBase<UserMast> implements IUserMastRepository {

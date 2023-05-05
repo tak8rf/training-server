@@ -1,5 +1,5 @@
-import { IPostMastRepository } from 'chillnn-training-abr';
-import { PostMast } from 'chillnn-training-abr/dist/entities/type';
+import { IPostMastRepository } from 'training-abr';
+import { PostMast } from 'training-abr/dist/entities/type';
 import { DynamoDBRepositoryBase } from '../dynamoDBRepositoryBase';
 
 export class DynamoDBPostMastRepository extends DynamoDBRepositoryBase<PostMast> implements IPostMastRepository {
